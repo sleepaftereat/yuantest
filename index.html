@@ -12,117 +12,127 @@
     <!--
     <script src="//sdk-test.leadswarp.com/linkflow.min.js?token=MS04YmM2Njk2NC1mOTc1LTQ5MDQtODRlZi03NzliYjVkZDllYzQ%3D&server_url=https://devtest-cdp2.leadswarp.com&atrk_pl=1&atrk_pl_mxd=20"></script>
     -->
- </head>
+  </head>
   <body>
-    <button type="button" id="btnCreateOrder" data-loading-text="RQ" class="btn btn-primary">
+    <button
+      type="button"
+      id="btnCreateOrder"
+      data-loading-text="RQ"
+      class="btn btn-primary"
+    >
       创建订单
     </button>
 
-    <button type="button" id="btnCancelOrder" data-loading-text="RQ" class="btn btn-primary">
+    <button
+      type="button"
+      id="btnCancelOrder"
+      data-loading-text="RQ"
+      class="btn btn-primary"
+    >
       取消订单
     </button>
 
-
     <script>
-        if (window.linkflow) {
+      if (window.linkflow) {
         //-------------------------配置SDK-----------------------
-          window.linkflow.setup({
-            name: 'lfsdk',
-            cid_type: 'wxa.openId',
-            token: 'MS04YmM2Njk2NC1mOTc1LTQ5MDQtODRlZi03NzliYjVkZDllYzQ=',
-            server_url: 'https://devtest-cdp2.leadswarp.com',
-            wechat_auth: {
-              appid: 'wx79bb06ff33f1e414',//联否饭团
-              scope: 'snsapi_userinfo'
-            },
-            auto_track: {
-              page_show: true,
-              page_leave: true,
-              page_leave_max_duration: 300
-            }
-          });
-          console.info(linkflow);
-
-        }
-
+        window.linkflow.setup({
+          name: "lfsdk",
+          cid_type: "wxa.openId",
+          token: "MS04YmM2Njk2NC1mOTc1LTQ5MDQtODRlZi03NzliYjVkZDllYzQ=",
+          server_url: "https://devtest-cdp2.leadswarp.com",
+          wechat_auth: {
+            appid: "wx79bb06ff33f1e414", //联否饭团
+            scope: "snsapi_userinfo",
+          },
+          auto_track: {
+            page_show: true,
+            page_leave: true,
+            page_leave_max_duration: 300,
+          },
+        });
+        console.info(linkflow);
+      };
 
       //============================追踪事件==========================
 
       //-------------------------------创建订单-----------------------------
-      $('#btnCreateOrder').on('click', function () {
-
+      $("#btnCreateOrder").on("click", function () {
         //-------------------------识别联系人-----------------------
-         window.linkflow.setIdentities([{
-            id:"rqtest220726-02",
-            type:"externalId"
-          }])
-          linkflow.setProfile({
-             name:"yuantest",
-             nickname: "rqtest220726-02",
-             avatar: "",
-             gender: "male",
-             idCard: "1111111",
-             email: "xxx.com",
-             dateOfBirthday: "1990-10-21",
-             mobilePhone: "12341234123",
-             country: "中国",
-             state: "江苏省",
-             city: "苏州市",
-             street: "吴中",
-             props: {
-                yuan_type: "web来的",
-                test_yyp: "优质",
-                yuan_like: "随便",
-            }
-          })
+        window.linkflow.setIdentities([
+          {
+            id: "rqtest220726-02",
+            type: "externalId",
+          },
+        ]);
+        linkflow.setProfile({
+          name: "yuantest",
+          nickname: "rqtest220726-02",
+          avatar: "",
+          gender: "male",
+          idCard: "1111111",
+          email: "xxx.com",
+          dateOfBirthday: "1990-10-21",
+          mobilePhone: "12341234123",
+          country: "中国",
+          state: "江苏省",
+          city: "苏州市",
+          street: "吴中",
+          props: {
+            yuan_type: "web来的",
+            test_yyp: "优质",
+            yuan_like: "随便",
+          },
+        });
 
         linkflow.track({
-            event:"y_CreateOrder",
-            props: {
-              fr001: "创建订单",
-              fr002: new Date('2022-07-20 11:20:13'),
-              fr003: 1,
-              fr004: "false",
-              fr005: 88.88,
-              fr006: "test创建订单",
-            }
-          })
+          event: "y_CreateOrder",
+          props: {
+            fr001: "创建订单",
+            fr002: new Date("2022-07-20 11:20:13"),
+            fr003: 1,
+            fr004: "false",
+            fr005: 88.88,
+            fr006: "test创建订单",
+          },
+        });
       });
 
-
       //--------------------------------取消订单---------------------------------------
-      $('#btnCancelOrder').on('click', function () {
-
+      $("#btnCancelOrder").on("click", function () {
         //======================创建渠道账号=======================
-         window.linkflow.addIdentities([{
-            id:"testwxaopenId220726-02",
-            type:"wxa.openId"
-          }])
+        window.linkflow.addIdentities([
+          {
+            id: "testwxaopenId220726-02",
+            type: "wxa.openId",
+          },
+        ]);
 
         linkflow.track({
-            event:"ude_testmulapp",
-            props: {
-              fr001: "取消订单",
-              fr002: new Date('2022-07-20 11:20:13'),
-              fr003: 1,
-              fr004: "false",
-              fr005: 88.88,
-              fr006: "test创建订单",
-            },
-            items: [{
-              event: "test_number",//子事件
+          event: "ude_testmulapp",
+          props: {
+            fr001: "取消订单",
+            fr002: new Date("2022-07-20 11:20:13"),
+            fr003: 1,
+            fr004: "false",
+            fr005: 88.88,
+            fr006: "test创建订单",
+          },
+          items: [
+            {
+              event: "test_number", //子事件
               props: {
                 fr003: 1,
-             },
-           }],
-           utm: {
-             source: "事件utm",
-             content: "111",
-             campaign: "222",
-             medium: "333",
-             term: "444"
-           }
-        })
+              },
+            },
+          ],
+          utm: {
+            source: "事件utm",
+            content: "111",
+            campaign: "222",
+            medium: "333",
+            term: "444",
+          },
+        });
       });
     </script>
   </body>
