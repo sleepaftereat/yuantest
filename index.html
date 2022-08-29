@@ -37,7 +37,7 @@
         //-------------------------配置SDK-----------------------
         window.linkflow.setup({
           name: "lfsdk",
-          cid_type: "wxa.openId",
+          cid_type: "externalId",
           _id_share: true,
           token: "MS04YmM2Njk2NC1mOTc1LTQ5MDQtODRlZi03NzliYjVkZDllYzQ=",
           server_url: "https://devtest-cdp2.leadswarp.com",
@@ -61,13 +61,13 @@
         //-------------------------识别联系人-----------------------
         window.linkflow.setIdentities([
           {
-            id: "rqtest220829-03",
+            id: "rqtest220829-04",
             type: "externalId",
           },
         ]);
         linkflow.setProfile({
           name: "yuantest",
-          nickname: "rqtest220829-03",
+          nickname: "rqtest220829-04",
           avatar: "",
           gender: "male",
           idCard: "1111111",
@@ -103,7 +103,7 @@
         //======================创建渠道账号=======================
         window.linkflow.addIdentities([
           {
-            id: "testwxaopenId220829-03",
+            id: "testwxaopenId220829-04",
             type: "wxa.openId",
           },
         ]);
