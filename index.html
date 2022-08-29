@@ -38,6 +38,7 @@
         window.linkflow.setup({
           name: "lfsdk",
           cid_type: "wxa.openId",
+          _id_share: true,
           token: "MS04YmM2Njk2NC1mOTc1LTQ5MDQtODRlZi03NzliYjVkZDllYzQ=",
           server_url: "https://devtest-cdp2.leadswarp.com",
           wechat_auth: {
@@ -60,13 +61,13 @@
         //-------------------------识别联系人-----------------------
         window.linkflow.setIdentities([
           {
-            id: "rqtest220726-02",
+            id: "rqtest220829-03",
             type: "externalId",
           },
         ]);
         linkflow.setProfile({
           name: "yuantest",
-          nickname: "rqtest220726-02",
+          nickname: "rqtest220829-03",
           avatar: "",
           gender: "male",
           idCard: "1111111",
@@ -88,7 +89,7 @@
           event: "y_CreateOrder",
           props: {
             fr001: "创建订单",
-            fr002: new Date("2022-07-20 11:20:13"),
+            fr002: new Date("2022-08-29 11:20:13"),
             fr003: 1,
             fr004: "false",
             fr005: 88.88,
@@ -102,7 +103,7 @@
         //======================创建渠道账号=======================
         window.linkflow.addIdentities([
           {
-            id: "testwxaopenId220726-02",
+            id: "testwxaopenId220829-03",
             type: "wxa.openId",
           },
         ]);
@@ -111,7 +112,7 @@
           event: "ude_testmulapp",
           props: {
             fr001: "取消订单",
-            fr002: new Date("2022-07-20 11:20:13"),
+            fr002: new Date("2022-08-29 11:20:13"),
             fr003: 1,
             fr004: "false",
             fr005: 88.88,
