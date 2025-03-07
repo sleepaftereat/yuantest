@@ -10,7 +10,7 @@
 
     <script src="//sdk-test.leadswarp.com/linkflow.min.js"></script>
     <!--
-    <script src="//sdk-test.leadswarp.com/linkflow.min.js?token=MS04YmM2Njk2NC1mOTc1LTQ5MDQtODRlZi03NzliYjVkZDllYzQ%3D&server_url=https://devtest-cdp2.leadswarp.com&atrk_pl=1&atrk_pl_mxd=20"></script>
+    <script src="//sdk-test.leadswarp.com/linkflow.min.js?token=MS02NjVjYmY5OC02MmEwLTRkYzQtODU1Zi0wYjNjNTk1MzU1YWM=&server_url=https://devtest-cdp2.leadswarp.com&atrk_pl=1&atrk_pl_mxd=20"></script>
     -->
   </head>
   <body>
@@ -39,7 +39,7 @@
           name: "lfsdk",
           cid_type: "externalId",
           _id_share: true,
-          token: "MS04YmM2Njk2NC1mOTc1LTQ5MDQtODRlZi03NzliYjVkZDllYzQ=",
+          token: "MS02NjVjYmY5OC02MmEwLTRkYzQtODU1Zi0wYjNjNTk1MzU1YWM=",
           server_url: "https://devtest-cdp2.leadswarp.com",
           wechat_auth: {
             appid: "wx79bb06ff33f1e414", //联否饭团
@@ -61,13 +61,13 @@
         //-------------------------识别联系人-----------------------
         window.linkflow.setIdentities([
           {
-            id: "rqtest220907-01",
+            id: "rqtest20250307",
             type: "externalId",
           },
         ]);
         linkflow.setProfile({
           name: "yuantest",
-          nickname: "rqtest220907-01",
+          nickname: "rqtest20250307",
           avatar: "",
           gender: "male",
           idCard: "1111111",
@@ -89,7 +89,7 @@
           event: "y_CreateOrder",
           props: {
             fr001: "创建订单",
-            fr002: new Date("2022-08-29 11:20:13"),
+            fr002: new Date("2025-03-07 11:20:13"),
             fr003: 1,
             fr004: "false",
             fr005: 88.88,
@@ -103,24 +103,19 @@
         //======================创建渠道账号=======================
         window.linkflow.addIdentities([
           {
-            id: "testwxaopenId220907-01",
+            id: "testwxaopenId20250307",
             type: "wxa.openId",
           },
         ]);
 
         linkflow.track({
-          event: "ude_testmulapp",
+          event: "y_cancelOrder",
           props: {
-            fr001: "取消订单",
-            fr002: new Date("2022-08-29 11:20:13"),
-            fr003: 1,
-            fr004: "false",
-            fr005: 88.88,
-            fr006: "test创建订单",
+            fr001: "取消订单"
           },
           items: [
             {
-              event: "test_number", //子事件
+              event: "y_son01", //子事件
               props: {
                 fr003: 1,
               },
